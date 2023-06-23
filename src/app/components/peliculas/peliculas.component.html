@@ -4,25 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="peliculas.component.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>Document</title>
 </head>
 <body>
   <div class="container">
-    <table class="table table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Genero</th>
-            <th scope="col">Director</th>
-            <th scope="col">Actores</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-          </tr>
-        </tbody>
-      </table>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h2>Formulario</h2>
+            <form #peliculaForm="ngForm">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter your Title">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter your Gender">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter your Director">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter your Actors">
+              </div>
+              <div>
+                <button class="btn btn-primary mr-2">
+                  Clean
+                </button>
+                <button class="btn btn-secondary">
+                  Save
+                </button>   
+              </div>                        
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="text-center">Titulo</th>
+              <th class="text-center">Genero</th>
+              <th class="text-center">Director</th>
+              <th class="text-center">Actores</th>
+              <th class="text-center">Copias</th>
+              <th class="text-center">Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pelicula of peliculaService.pelicula">
+              <td>{{ pelicula.titulo }}</td>
+              <td>{{ pelicula.genero }}</td>
+              <td>{{ pelicula.director }}</td>
+              <td>{{ pelicula.actores }}</td>
+              <td></td>
+              <td>
+                <button class="btn btn-secondary btn-sm">
+                  <i class="material-icons">edit</i>
+                </button>
+                <button class="btn btn-danger btn-sm">
+                  <i class="material-icons">delete</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </body>
 </html>
