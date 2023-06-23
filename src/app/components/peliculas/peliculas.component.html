@@ -14,18 +14,22 @@
         <div class="card">
           <div class="card-body">
             <h2>Formulario</h2>
-            <form #peliculaForm="ngForm">
+            <form #peliculaForm="ngForm" (ngSubmit)="crearPelicula(peliculaForm)">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter your Title">
+                <input type="text" class="form-control" name="titulo" placeholder="Enter your Title"
+                [(ngModel)]="peliculaService.selectedPelicula.titulo">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter your Gender">
+                <input type="text" class="form-control" name="genero" placeholder="Enter your Gender"
+                [(ngModel)]="peliculaService.selectedPelicula.genero">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter your Director">
+                <input type="text" class="form-control" name="director" placeholder="Enter your Director"
+                [(ngModel)]="peliculaService.selectedPelicula.director">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter your Actors">
+                <input type="text" class="form-control" name="actores" placeholder="Enter your Actors"
+                [(ngModel)]="peliculaService.selectedPelicula.actores">
               </div>
               <div>
                 <button class="btn btn-primary mr-2">
@@ -62,7 +66,7 @@
                 <button class="btn btn-secondary btn-sm">
                   <i class="material-icons">edit</i>
                 </button>
-                <button class="btn btn-danger btn-sm">
+                <button class="btn btn-danger btn-sm" (click)="eliminarPelicula(pelicula._id)">
                   <i class="material-icons">delete</i>
                 </button>
               </td>
