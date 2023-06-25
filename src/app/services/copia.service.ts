@@ -9,12 +9,13 @@ export class CopiaService {
 
   private URL = 'http://localhost:4000/api/copias';
   
+
   copia: copia[] = [];
   selectedCopia: copia = {
     _id: '',
     pelicula: '',
     id_cinta: '',
-    disponible: true
+   disponible: true
   };
 
   constructor(private http: HttpClient) { }
