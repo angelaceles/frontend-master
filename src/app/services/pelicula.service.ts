@@ -31,9 +31,11 @@ export class PeliculaService {
 
   obtenerPelicula() {}
 
-  actualizarPelicula() {}
+  actualizarPelicula(pelicula: pelicula) {
+    return this.http.put(`${this.URL}/${pelicula._id}`, pelicula);
+  }
 
   eliminarPelicula(_id:string) {
-    return this.http.delete(`${this.URL}/:${_id}`)
+    return this.http.delete(`${this.URL}/${_id}`);
   }
 }

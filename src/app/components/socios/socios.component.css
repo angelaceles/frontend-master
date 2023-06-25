@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
 
 *{
-    margin-top: 2rem;
-    margin: 20;
-    padding: 10;
+    padding: 10px;
+    margin-top: 4px;
     box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;;
+} 
+
+input::placeholder {
+    color: rgba(206, 206, 206, 0.726); 
 }
+
+.text-center {
+    text-align: center;
+}
+  
+  
+  
+  
+  
