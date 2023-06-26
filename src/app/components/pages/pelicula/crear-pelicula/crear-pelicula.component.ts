@@ -21,7 +21,8 @@ export class CrearPeliculaComponent{
          titulo:   ['', Validators.required],
          genero:   ['', Validators.required],
          director: ['', Validators.required],
-         actores:  ['', Validators.required]
+         actores:  ['', Validators.required],
+         copias:  ['', Validators.required],
     })            
   }
 
@@ -31,6 +32,7 @@ export class CrearPeliculaComponent{
       genero: this.peliculaForm.get('genero')?.value,
       director: this.peliculaForm.get('director')?.value,
       actores: this.peliculaForm.get('actores')?.value,
+      copias: this.peliculaForm.get('copias')?.value,
     }
 
     console.log(PELICULA)

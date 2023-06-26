@@ -82,6 +82,16 @@
                           </div>
                         </div>
                         <br>
+                        <div class="form-group">
+                          <input type="text" formControlName="generoPreferido" 
+                               class="form-control" placeholder="Ingresar prestamo">
+                          <div class="text-danger"
+                             *ngIf="socioForm.get('prestamo') && 
+                                    socioForm.get('prestamo')?.touched">
+                             <span>El prestamo <strong>es obligatorio</strong></span>
+                          </div>
+                        </div>
+                        <br>
                         <div  class="col-sm-12 text-right">
                           <div class="panel-body buttons-margin">
                              <button type="submit" [disabled]="socioForm.invalid"  class="btn btn-w-md btn-success mr-2">Guardar</button>&nbsp;&nbsp;

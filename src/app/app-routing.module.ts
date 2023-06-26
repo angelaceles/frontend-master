@@ -15,7 +15,6 @@ import { ListarCopiaComponent } from './components/pages/copia/listar-copia/list
 import { ListarPrestamoComponent } from './components/pages/prestamo/listar-prestamo/listar-prestamo.component';
 import { CrearCopiaComponent } from './components/pages/copia/crear-copia/crear-copia.component';
 import { CrearPrestamoComponent } from './components/pages/prestamo/crear-prestamo/crear-prestamo.component';
-import { EditarPrestamoComponent } from './components/pages/prestamo/editar-prestamo/editar-prestamo.component';
 
 const routes: Routes = [
   {
@@ -82,11 +81,7 @@ const routes: Routes = [
   {
     path: 'crear-prestamo',
     component: CrearPrestamoComponent
-  },
-  {
-    path: 'editar-prestamo/:id',
-    component: EditarPrestamoComponent
-  },
+  }
 ];
 
 @NgModule({

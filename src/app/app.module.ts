@@ -19,9 +19,6 @@ import { EditarSocioComponent } from './components/pages/socio/editar-socio/edit
 import { CrearSocioComponent } from './components/pages/socio/crear-socio/crear-socio.component';
 import { CrearPrestamoComponent } from './components/pages/prestamo/crear-prestamo/crear-prestamo.component';
 import { ListarPrestamoComponent } from './components/pages/prestamo/listar-prestamo/listar-prestamo.component';
-import { EditarPrestamoComponent } from './components/pages/prestamo/editar-prestamo/editar-prestamo.component';
-
-
 
 @NgModule({
   declarations: [
@@ -39,7 +36,6 @@ import { EditarPrestamoComponent } from './components/pages/prestamo/editar-pres
     CrearSocioComponent,
     CrearPrestamoComponent,
     ListarPrestamoComponent,
-    EditarPrestamoComponent
   ],
   imports: [
     BrowserModule,

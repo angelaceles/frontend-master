@@ -53,12 +53,23 @@
                         </div>
                         <br>
                         <div class="form-group">
-                          <input type="text" formControlName="entregado" 
+                          <input type="form-check-input" formControlName="entregado" 
                                class="form-control" placeholder="Ingresar entregado">
+                               <label for="form-check-label" formControlName="entregado"></label>
                           <div class="text-danger"
                              *ngIf="prestamoForm.get('entregado')?.hasError('required') && 
                                     prestamoForm.get('entregado')?.touched">
                              <span>Los entregado <strong>es obligatorio</strong></span>
+                          </div>
+                        </div> 
+                        <div class="form-group">
+                          <input type="form-check-input" formControlName="copias" 
+                               class="form-control" placeholder="Ingresar Copias">
+                               <label for="form-check-label" formControlName="copias"></label>
+                          <div class="text-danger"
+                             *ngIf="prestamoForm.get('copias')?.hasError('required') && 
+                                    prestamoForm.get('copias')?.touched">
+                             <span>Las copias <strong>es obligatorio</strong></span>
                           </div>
                         </div> 
                         <br>

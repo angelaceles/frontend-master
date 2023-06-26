@@ -11,11 +11,12 @@
             <div class="col-md-15">
                 <div class="panel">
                     <div class="panel-body">
+                        <br>
                         <div class="col-md-12 col-sm-12" id="form" style="display:block;">
                             <div class="panel panel-filled">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-sm-12"><h5 class="m-t-xs">Ingreso de Pelicula</h5></div>
+                                        <div class="col-sm-12"><h5 class="m-t-xs">Editar la Pelicula</h5></div>
                                     </div>
                                     <form [formGroup]="peliculaForm" (ngSubmit)="editarPelicula()">
                                         <div class="form-group">
@@ -55,6 +56,16 @@
                                             <div class="text-danger"
                                                 *ngIf="peliculaForm.get('actores')?.hasError('required') && peliculaForm.get('actores')?.touched">
                                                 <span>Los actores <strong>es obligatorio</strong></span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label>Copia</label>
+                                            <input type="text" formControlName="copias" 
+                                                class="form-control" placeholder="Ingresar Copias">
+                                            <div class="text-danger"
+                                                *ngIf="peliculaForm.get('copias')?.hasError('required') && peliculaForm.get('copias')?.touched">
+                                                <span>Las copias<strong>es obligatorio</strong></span>
                                             </div>
                                         </div>
                                         <br>

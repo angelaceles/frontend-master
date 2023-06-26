@@ -26,7 +26,8 @@ export class EditarSocioComponent implements OnInit {
        fechaCreacion:     ['', Validators.required],
        directorFavorito:  ['', Validators.required],
        actorFavorito:     ['', Validators.required],
-       generoPreferido:   ['', Validators.required]
+       generoPreferido:   ['', Validators.required],
+       prestamo:   ['', Validators.required]
     })  
     this.id = aRouter.snapshot.paramMap.get('id');          
   }
@@ -45,7 +46,8 @@ export class EditarSocioComponent implements OnInit {
           fechaCreacion: data.fechaCreacion,
           directorFavorito: data.directorFavorito,
           actorFavorito: data.actorFavorito,
-          generoPreferido: data.generoPreferido
+          generoPreferido: data.generoPreferido,
+          prestamo: data.prestamo,
         })
       })
     }
@@ -60,7 +62,9 @@ export class EditarSocioComponent implements OnInit {
       directorFavorito: this.socioForm.get('directorFavorito')?.value,
       actorFavorito: this.socioForm.get('actorFavorito')?.value,
       generoPreferido: this.socioForm.get('generoPreferido')?.value,
+      prestamo: this.socioForm.get('prestamo')?.value,
     }
+
     Swal.fire({
       title: 'Actualizacion de Socio',
       text: "¿Desea actualizar al socio?",

@@ -23,7 +23,8 @@ export class CrearSocioComponent {
        fechaCreacion:     ['', Validators.required],
        directorFavorito:  ['', Validators.required],
        actorFavorito:     ['', Validators.required],
-       generoPreferido:   ['', Validators.required]
+       generoPreferido:   ['', Validators.required],
+       prestamo:   ['', Validators.required]
     })            
   }
   
@@ -36,6 +37,7 @@ export class CrearSocioComponent {
       directorFavorito: this.socioForm.get('directorFavorito')?.value,
       actorFavorito: this.socioForm.get('actorFavorito')?.value,
       generoPreferido: this.socioForm.get('generoPreferido')?.value,
+      prestamo: this.socioForm.get('prestamo')?.value,
     }
 
     console.log(SOCIO)
