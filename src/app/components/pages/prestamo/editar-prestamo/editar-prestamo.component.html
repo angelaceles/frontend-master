@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-15">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-12 col-sm-12" id="form" style="display:block;">
+                            <div class="panel panel-filled">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-12"><h5 class="m-t-xs">Ingreso de Prestamo</h5></div>
+                                    </div>
+                                    <form [formGroup]="prestamoForm" (ngSubmit)="editarPrestamo()">
+                                        <div class="form-group">
+                                            <input type="text" formControlName="socio" 
+                                                 class="form-control" placeholder="Ingresar Socio">
+                                            <div class="text-danger"
+                                               *ngIf="prestamoForm.get('socio')?.hasError('required') && 
+                                                      prestamoForm.get('socio')?.touched">
+                                               <span>El socio <strong>es obligatorio</strong></span>
+                                          </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                          <input type="text" formControlName="copia" 
+                                               class="form-control" placeholder="Ingresar Copia">
+                                          <div class="text-danger"
+                                             *ngIf="prestamoForm.get('copia')?.hasError('required') && 
+                                                    prestamoForm.get('copia')?.touched">
+                                             <span>La Copia <strong>es obligatorio</strong></span>
+                                          </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                          <input type="date" formControlName="fechaPrestamo" 
+                                               class="form-control" placeholder="Ingresar Fecha de Prestamo">
+                                          <div class="text-danger"
+                                             *ngIf="prestamoForm.get('fechaPrestamo')?.hasError('required') && 
+                                                    prestamoForm.get('fechaPrestamo')?.touched">
+                                             <span>La fecha Prestamo <strong>es obligatorio</strong></span>
+                                          </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                          <input type="date" formControlName="fechaDevolucion" 
+                                               class="form-control" placeholder="Ingresar Fecha de Devolucion">
+                                          <div class="text-danger"
+                                             *ngIf="prestamoForm.get('fechaDevolucion')?.hasError('required') && 
+                                                    prestamoForm.get('fechaDevolucion')?.touched">
+                                             <span>La fecha de Devolucion <strong>es obligatorio</strong></span>
+                                          </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                          <input type="text" formControlName="entregado" 
+                                               class="form-control" placeholder="Ingresar entregado">
+                                          <div class="text-danger"
+                                             *ngIf="prestamoForm.get('entregado')?.hasError('required') && 
+                                                    prestamoForm.get('entregado')?.touched">
+                                             <span>Los entregado <strong>es obligatorio</strong></span>
+                                          </div>
+                                        </div> 
+                                        <br>
+                                        <div  class="col-sm-12 text-right">
+                                            <div class="panel-body buttons-margin">
+                                               <button type="submit" [disabled]="prestamoForm.invalid" class="btn btn-w-md btn-success">Guardar</button>&nbsp;&nbsp;
+                                               <button class="btn btn-w-md btn-warning" routerLink="/prestamos">Cancelar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>

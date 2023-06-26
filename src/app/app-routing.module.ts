@@ -5,10 +5,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { PeliculasComponent } from './components/peliculas/peliculas.component';
-import { PrestamosDevueltosComponent } from './components/prestamos-devueltos/prestamos-devueltos.component';
-import { PrestamosDoneComponent } from './components/prestamos-done/prestamos-done.component';
-import { SociosComponent } from './components/socios/socios.component';
+import { ListarPeliculaComponent } from './components/pages/pelicula/listar-pelicula/listar-pelicula.component';
+import { EditarPeliculaComponent } from './components/pages/pelicula/editar-pelicula/editar-pelicula.component';
+import { CrearPeliculaComponent } from './components/pages/pelicula/crear-pelicula/crear-pelicula.component';
+import { ListarSocioComponent } from './components/pages/socio/listar-socio/listar-socio.component';
+import { CrearSocioComponent } from './components/pages/socio/crear-socio/crear-socio.component';
+import { EditarSocioComponent } from './components/pages/socio/editar-socio/editar-socio.component';
+import { ListarCopiaComponent } from './components/pages/copia/listar-copia/listar-copia.component';
+import { ListarPrestamoComponent } from './components/pages/prestamo/listar-prestamo/listar-prestamo.component';
+import { CrearCopiaComponent } from './components/pages/copia/crear-copia/crear-copia.component';
+import { CrearPrestamoComponent } from './components/pages/prestamo/crear-prestamo/crear-prestamo.component';
+import { EditarPrestamoComponent } from './components/pages/prestamo/editar-prestamo/editar-prestamo.component';
 
 const routes: Routes = [
   {
@@ -29,21 +36,56 @@ const routes: Routes = [
     component: SignupComponent
   },
   
+
   {
     path: 'peliculas',
-    component: PeliculasComponent
+    component: ListarPeliculaComponent
   },
+  {
+    path: 'editar-pelicula/:id',
+    component: EditarPeliculaComponent
+  },
+  {
+    path: 'crear-pelicula',
+    component: CrearPeliculaComponent
+  },
+
+
   {
     path: 'socios',
-    component: SociosComponent
+    component: ListarSocioComponent
   },
   {
-    path: 'prestamo_done',
-    component: PrestamosDoneComponent
+    path: 'editar-socio/:id',
+    component: EditarSocioComponent
   },
   {
-    path: 'prestamos_devueltos',
-    component: PrestamosDevueltosComponent
+    path: 'crear-socios',
+    component: CrearSocioComponent
+  },
+
+
+  {
+    path: 'copias',
+    component: ListarCopiaComponent
+  },
+  {
+    path: 'crear-copias',
+    component: CrearCopiaComponent
+  },
+
+
+  {
+    path: 'prestamos',
+    component: ListarPrestamoComponent
+  },
+  {
+    path: 'crear-prestamo',
+    component: CrearPrestamoComponent
+  },
+  {
+    path: 'editar-prestamo/:id',
+    component: EditarPrestamoComponent
   },
 ];
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-15">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-12 col-sm-12" id="form" style="display:block;">
+                            <div class="panel panel-filled">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-12"><h5 class="m-t-xs">Ingreso de Pelicula</h5></div>
+                                    </div>
+                                    <form [formGroup]="peliculaForm" (ngSubmit)="editarPelicula()">
+                                        <div class="form-group">
+                                            <label>Titulo</label>
+                                            <input type="text" formControlName="titulo"
+                                                class="form-control" placeholder="Ingresar Titulo">
+                                            <div class="text-danger"
+                                                *ngIf="peliculaForm.get('titulo')?.hasError('required') && peliculaForm.get('titulo')?.touched">
+                                                <span>La Pelicula <strong>es obligatorio</strong></span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label>Genero</label>
+                                            <input type="text" formControlName="genero" 
+                                                class="form-control" placeholder="Ingresar Genero">
+                                            <div class="text-danger"
+                                                *ngIf="peliculaForm.get('genero')?.hasError('required') && peliculaForm.get('genero')?.touched">
+                                                <span>El genero <strong>es obligatoria</strong></span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label>Director</label>
+                                            <input type="text" formControlName="director" 
+                                                class="form-control" placeholder="Ingresar Director">
+                                            <div class="text-danger"
+                                                *ngIf="peliculaForm.get('director')?.hasError('required') && peliculaForm.get('director')?.touched">
+                                                <span>El director <strong>es obligatoria</strong></span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label>Actores</label>
+                                            <input type="text" formControlName="actores" 
+                                                class="form-control" placeholder="Ingresar Actores">
+                                            <div class="text-danger"
+                                                *ngIf="peliculaForm.get('actores')?.hasError('required') && peliculaForm.get('actores')?.touched">
+                                                <span>Los actores <strong>es obligatorio</strong></span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div  class="col-sm-12 text-right">
+                                            <div class="panel-body buttons-margin">
+                                               <button type="submit" [disabled]="peliculaForm.invalid" class="btn btn-w-md btn-success">Guardar</button>&nbsp;&nbsp;
+                                               <button class="btn btn-w-md btn-warning" routerLink="/peliculas">Cancelar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>

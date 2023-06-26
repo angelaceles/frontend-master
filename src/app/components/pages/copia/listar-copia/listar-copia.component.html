@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-15">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-12 col-sm-12" id="list_alumnos">
+                            <div class="panel panel-filled">
+                                <div class="panel-body">
+                                    <div class="view-header">
+                                        <div class="header-icon">
+                                            <i class="pe page-header-icon pe-7s-note2"></i>
+                                        </div>
+                                        <div class="header-title">
+                                            <h3>Copias</h3>
+                                            <small>
+                                                Copias Registrados
+                                            </small>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                        </div>
+                                        <div class="col-sm-12 text-right">
+                                                <a id="btnNuevo" class="btn btn-w-md btn-info"
+                                                    routerLink="/crear-copias">Nueva Copia</a>&nbsp;&nbsp;
+                                                <a id="btnNuevo" class="btn btn-w-md btn-warning"
+                                                (click)="openPdfTables()">Imprimir</a>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="table-responsive">
+                                        <table *ngIf="listCopias.length > 0" class="table table-hover table-striped">
+                                            <thead>
+                                              <tr>
+                                                <th class="text-center">Pelicula</th>
+                                                <th class="text-center">Id_cinta</th>
+                                                <th class="text-center">disponible</th>
+                                                <th class="text-center">Operationes</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody id="datos">
+                                              <tr *ngFor="let copia of listCopias">
+                                                <td>{{ copia.pelicula }}</td>
+                                                <td>{{ copia.id_cinta }}</td>
+                                                <td>{{ copia.disponible }}</td>
+                                                <td>
+                                                    <button (click)="eliminarCopia(copia._id)">
+                                                        Eliminar
+                                                    </button>
+                                                </td>                                                  
+                                              </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <br>
+                                    <div class="text-right font-bold c-white y-value">
+                                        <div id="val_a">Total de Peliculas: {{elementos}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

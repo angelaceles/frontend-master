@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card-body">
+                    <h2>Formulario</h2>
+                    <form [formGroup]="copiaForm" (ngSubmit)="crearCopia()">
+                        <div class="form-group">
+                            <input type="text" formControlName="pelicula" 
+                                 class="form-control" placeholder="Ingresar Pelicula">
+                            <div class="text-danger"
+                               *ngIf="copiaForm.get('pelicula')?.hasError('required') && 
+                                      copiaForm.get('pelicula')?.touched">
+                               <span>La pelicula <strong>es obligatorio</strong></span>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <input type="text" formControlName="id_cinta" 
+                               class="form-control" placeholder="Ingresar Id_cinta">
+                          <div class="text-danger"
+                             *ngIf="copiaForm.get('id_cinta')?.hasError('required') && 
+                                    copiaForm.get('id_cinta')?.touched">
+                             <span>La id_cinta <strong>es obligatorio</strong></span>
+                          </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                          <input type="text" formControlName="disponible" 
+                               class="form-control" placeholder="Ingresar Disponible">
+                          <div class="text-danger"
+                             *ngIf="copiaForm.get('disponible')?.hasError('required') && 
+                                    copiaForm.get('disponible')?.touched">
+                             <span>Esta disponible <strong>es obligatorio</strong></span>
+                          </div>
+                        </div>
+                        <br>
+                        <div  class="col-sm-12 text-right">
+                          <div class="panel-body buttons-margin">
+                             <button type="submit" [disabled]="copiaForm.invalid"  class="btn btn-w-md btn-success mr-2">Guardar</button>&nbsp;&nbsp;
+                             <button class="btn btn-w-md btn-warning" routerLink="/copias">Cancelar</button>
+                          </div>
+                        </div>  
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
